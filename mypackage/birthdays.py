@@ -1,3 +1,11 @@
+"""
+
+This is our birthday module
+
+"""
+
+"""Set of famous people and their birthdays"""
+
 birthdays = {
     'Albert Einstein': '03/14/1879',
     'Benjamin Franklin': '01/17/1706',
@@ -6,11 +14,13 @@ birthdays = {
     'Rowan Atkinson': '01/6/1955'}
 
 def print_birthdays():
+    """Return the list of famous people's names"""
     print('Welcome to the birthday dictionary. We know the birthdays of these people:')
     for name in birthdays:
         print(name)
 
 def return_birthday(name):
+    """Given a name, if found, return the birthdays"""
     if name in birthdays:
         print('{}\'s birthday is {}.'.format(name, birthdays[name]))
     else:
