@@ -80,11 +80,12 @@ def check_for_username(username, password, db):
         print("Password is invalid")
         return False
 
-check_or_create(db_check)
-parse_args()
-args = parse_args()
-if args.a and args.p:
-    save_new_username(args.a, args.p)
-elif args.c and args.p:
-    check_for_username(args.c, args.p,db_check)
-conn.close()
+if __name__=="__main__":
+    check_or_create(db_check)
+    parse_args()
+    args = parse_args()
+    if args.a and args.p:
+        save_new_username(args.a, args.p)
+    elif args.c and args.p:
+        check_for_username(args.c, args.p,db_check)
+    conn.close() 
