@@ -5,7 +5,6 @@ import hashlib
 import argparse
 import random
 
-
 db_check = '../user_database.db'
 conn = 0
 cursor = 0
@@ -88,4 +87,5 @@ if __name__=="__main__":
         save_new_username(args.a, args.p)
     elif args.c and args.p:
         check_for_username(args.c, args.p,db_check)
-    conn.close() 
+    conn.close()
+

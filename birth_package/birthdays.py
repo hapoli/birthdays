@@ -4,7 +4,7 @@ import csv
 
 """Open the birth.csv."""
 
-reader = csv.reader(open('mypackage/birth.csv', 'r'))
+reader = csv.reader(open('birth_package/birth.csv', 'r'))
 d = {}
 for row in reader:
     k, v = row
