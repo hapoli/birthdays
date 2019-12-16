@@ -45,7 +45,7 @@ def verbosity_levels(name):
                 print (birthdays.return_birthday(i))
         else:
             print ('Sorry, {} is not in the list, '.format(i))
-                    birthdays.print_birthdays()
+            birthdays.print_birthdays()
 
 db_corr = 'user_database.db'
 
