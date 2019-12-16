@@ -5,12 +5,12 @@ import os.path
 
 
 def type_f(path):
-    """Finding the extention of the file."""
+    """Find the extention of the file."""
     extension = os.path.splitext(path)[1]
     return extension
 
 def csv_reader(path):
-    """Reading csv file as dictionary."""
+    """Read csv file as dictionary."""
     reader = csv.reader(open(path, 'r'))
     d = {}
     for row in reader:
