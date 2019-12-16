@@ -9,6 +9,7 @@ def type_f(path):
     extension = os.path.splitext(path)[1]
     return extension
 
+
 def csv_reader(path):
     """Read csv file as dictionary."""
     reader = csv.reader(open(path, 'r'))

@@ -1,12 +1,13 @@
 """Test code to check for errors."""
 
 import unittest
-from  birth_package.test import csv_reader
-from  birth_package.test import type_f
+from birth_package.test import csv_reader
+from birth_package.test import type_f
 import sys
 import os
 
 class TestMain(unittest.TestCase):
+
 
     def setUp(self):
         self.temporary_file = "/tmp/temporary_file.csv"
