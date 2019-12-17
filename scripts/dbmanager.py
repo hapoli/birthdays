@@ -5,7 +5,7 @@ import hashlib
 import argparse
 import random
 
-db_check = '../user_database.db'
+db_check = 'user_database.db'
 conn = 0
 cursor = 0
 
