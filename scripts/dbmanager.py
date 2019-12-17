@@ -73,7 +73,7 @@ def check_for_username(username, password, db):
     digest = (results[0]) + password
     for i in range(100000):
         digest = hashlib.sha256(digest.encode('utf-8')).hexdigest()
-    rows = cursor.execute("SELECT * FROM user WHERE username=? and"
+    rows = cursor.execute("SELECT * FROM user WHERE username=? and "
                           "password=?", (username, digest))
     conn.commit()
     results = rows.fetchall()
