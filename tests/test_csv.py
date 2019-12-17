@@ -6,8 +6,8 @@ from birth_package.test import type_f
 import sys
 import os
 
-class TestMain(unittest.TestCase):
 
+class TestMain(unittest.TestCase):
 
     def setUp(self):
         self.temporary_file = "/tmp/temporary_file.csv"

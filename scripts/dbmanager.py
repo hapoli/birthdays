@@ -21,14 +21,14 @@ def check_or_create(db):
     except sqlite3.OperationalError:
         # Create table
         cursor.execute('''CREATE TABLE user
-                       (username CHAR(256) NOT NULL, password CHAR(256) 
+                       (username CHAR(256) NOT NULL, password CHAR(256)
                         NOT NULL,
                         salt CHAR(256) NOT NULL,
                         PRIMARY KEY (salt))''')
 
 
 def parse_args():
-    """Adding or checking the username.""" 
+    """Adding or checking the username."""
     parser = argparse.ArgumentParser()
     parser.add_argument('-a', help="add a usernamename (requires -p)",
                         required=False)
@@ -40,7 +40,7 @@ def parse_args():
 
 
 def save_new_username(username, password):
-    """Save new username with password.""" 
+    """Save new username with password."""
     global conn
     global cursor
     salt = str(random.random())
@@ -67,13 +67,14 @@ def check_for_username(username, password, db):
     except:
         print('Username is not valid')
         return
-    salt = cursor.execute("SELECT salt FROM user WHERE username=?",(username, ))
+    salt = cursor.execute("SELECT salt FROM user WHERE username=?",
+                          (username, ))
     results = salt.fetchone()
     digest = (results[0]) + password
     for i in range(100000):
         digest = hashlib.sha256(digest.encode('utf-8')).hexdigest()
-    rows = cursor.execute("SELECT * FROM user WHERE username=? and password=?",
-                          (username, digest))
+    rows = cursor.execute("SELECT * FROM user WHERE username=? and"
+                          "password=?", (username, digest))
     conn.commit()
     results = rows.fetchall()
     if results:
